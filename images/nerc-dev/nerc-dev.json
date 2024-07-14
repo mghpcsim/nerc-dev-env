@@ -1,0 +1,28 @@
+{
+    "builders": [
+        {
+            "type": "openstack",
+            "username": "",
+            "password": "",
+            "identity_endpoint": "https://stack.nerc.mghpcc.org:13000",
+            "region": "regionOne",
+            "tenant_id": "",
+            "image_name": "rocky8-nerc-dev",
+            "image_disk_format": "qcow2",
+            "use_blockstorage_volume": "true",
+            "ssh_username": "rocky",
+            "source_image": "74a33f77-fc42-4dd1-a5a2-55fb18fc50cc",
+            "flavor": "b3f5dded-efe3-4630-a988-2959b73eba70",
+            "ssh_ip_version": "4",
+            "networks": [
+                "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "script": "nerc-dev_vm.sh",
+            "type": "shell"
+        }
+    ]
+}
